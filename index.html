@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>Order Taking App</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Order Taking App</h1>
+        
+        <!-- Store Details Section -->
+        <div class="store-details">
+            <label for="store-name">Area:</label>
+            <input type="text" id="area-name" placeholder="Enter area" required>
+            
+            <label for="store-name">Store Name:</label>
+            <input type="text" id="store-name" placeholder="Enter store name" required>
+            
+            <button id="location-btn">Get Current Location</button>
+            <div id="location-display"></div>
+
+            <label for="store-name">Phone number:</label>
+            <input type="text" id="ph-no" placeholder="Enter phone number of owner" required>
+            
+
+            <label for="gst-number">Upload Bill Image/GST Number:</label>
+            <input type="file" id="bill-image" accept="image/*">
+            <input type="text" id="gst-number" placeholder="Enter GST number">
+        </div>
+
+        <!-- Category List Section -->
+        <div class="category-list" id="category-list">
+            <!-- Categories and Products will be dynamically loaded here -->
+        </div>
+
+
+        <!-- Total and Place Order Button -->
+        <div class="total">
+            <h2>Total: ₹<span id="total-value">0</span></h2>
+        </div>
+        <button class="place-order-button" id="place-order">Place Order</button>
+    </div>
+    <script src="script.js"></script>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js";
+        import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-firestore.js";
+        
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyARSQhOkbp00A_6S7YG1jeNqn7nRGwDda8",
+          authDomain: "godrej-paks.firebaseapp.com",
+          projectId: "godrej-paks",
+          storageBucket: "godrej-paks.appspot.com",
+          messagingSenderId: "1071363336817",
+          appId: "1:1071363336817:web:2cdb35c8d84d0a5e2c89d0"
+        };
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        console.log("Firebase App:", app);
+        console.log("Firestore Database:", db);
+
+        async function addData(data) {
+            try {
+                const docRef = await addDoc(collection(db, "PAKS"), data);
+                console.log("Document written with ID: ", docRef.id);
+            } catch (e) {
+                console.error("Error adding document: ", e);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+
+            const totalValue = document.getElementById('total-value');
+
+            function createMasterObject() {
+
+                const areaName = document.getElementById('area-name').value;
+                const storeName = document.getElementById('store-name').value;
+                const gstNumber = document.getElementById('gst-number').value;
+                const phNumber = document.getElementById('ph-no').value;
+
+                const currentDateTime = new Date();
+                const items = {};
+
+                // Get the current date as a string in the format of YYYY-MM-DD
+                const currentDate = currentDateTime.toISOString().split('T')[0];
+
+                // Get the current time in the format of HH:MM:SS
+                const currentTime = currentDateTime.toLocaleTimeString();
+
+                let total = 0;
+
+                const products = document.querySelectorAll('.product-item');
+                products.forEach(product => {
+                    const quantity = parseInt(product.querySelector('.quantity-value').textContent);
+                    const price = parseFloat(product.dataset.price);
+                    total += quantity * price;
+                    if (quantity > 0) {
+                        items[product.dataset.product] =  quantity;
+                    }
+                });
+                totalValue.textContent = total.toFixed(2);
+
+                const latitude =  window.latitude;
+                const longitude = window.longitude;
+            
+                
+
+                 // add other fields if mandatory
+                 if (!areaName || !storeName || !gstNumber || !phNumber || total == 0) {
+                    alert('Please enter all the details before submitting!');
+                    return;
+                }
+
+                return {
+                    area: areaName,
+                    store_name: storeName,
+                    store_latitude: latitude,
+                    store_longitude: longitude,
+                    store_phno: phNumber,
+                    store_gst_text: gstNumber,
+                    date: currentDate,
+                    time: currentTime,
+                    items,
+                    total_order_value: total
+                };
+
+            }
+
+            const placeOrderButton = document.getElementById('place-order');
+            
+            // Placeholder for the place order button functionality
+            placeOrderButton.addEventListener('click', async function() {
+        
+    
+                let data = createMasterObject();
+
+                if (data) {
+
+                    await addData(data);
+                    // Example alert showing the order details - replace with actual order handling logic
+                    alert(`Order placed successfully for store: ${data.store_name}, Area: ${data.area}, GST Number: ${data.store_gst_text}`);
+        
+                    // Clear fields after placing order
+                    document.getElementById('area-name').value = '';
+                    document.getElementById('store-name').value = '';
+                    document.getElementById('gst-number').value = '';
+                    document.getElementById('ph-no').value = '';
+                    document.getElementById('location-display').textContent = '';
+                    document.querySelectorAll('.quantity-value').forEach(q => q.textContent = '0');
+                    totalValue.textContent = 0;
+                }
+    
+            });
+        });
+
+      </script>
+</body>
+</html>
