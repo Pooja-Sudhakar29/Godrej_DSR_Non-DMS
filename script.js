@@ -173,18 +173,10 @@ document.addEventListener('DOMContentLoaded', function() {
             { "SKU ID": "PA EDP Harmony 100 ml", "MRP": 749, "price": 356 },
             { "SKU ID": "PA EDP-Gift Kit 4X20 ml", "MRP": 649, "price": 379 }
         ],
-        "PA EDP": [
-            { "SKU ID": "PA EDP Euphoria 50 ml", "MRP": 399, "price": 190 },
-            { "SKU ID": "PA EDP Conquer 50 ml", "MRP": 399, "price": 190 },
-            { "SKU ID": "PA EDP Harmony 50 ml", "MRP": 399, "price": 190 },
-            { "SKU ID": "PA EDP GM 50ml", "MRP": 349, "price": 166 },
-            { "SKU ID": "PA EDP Voyage 50ml", "MRP": 399, "price": 190 },
-            { "SKU ID": "PA EDP Knight 100ml", "MRP": 499, "price": 250 },
-            { "SKU ID": "PA EDP Samurai 100ml", "MRP": 499, "price": 250 },
-            { "SKU ID": "PA EDP Euphoria 100 ml", "MRP": 749, "price": 356 },
-            { "SKU ID": "PA EDP Conquer 100 ml", "MRP": 749, "price": 356 },
-            { "SKU ID": "PA EDP Harmony 100 ml", "MRP": 749, "price": 356 },
-            { "SKU ID": "PA EDP-Gift Kit 4X20 ml", "MRP": 649, "price": 379 }
+        "PA 2x range": [
+            { "SKU ID": "PA 2X B2G1", "MRP": 450, "price": 388 },
+            { "SKU ID": "PA 2X GM Intense 120ml", "MRP": 225, "price": 113 },
+            { "SKU ID": "PA Alexander Single 120 ml", "MRP": 225, "price": 113 },
         ]
         
         // Continue to add more categories and products
