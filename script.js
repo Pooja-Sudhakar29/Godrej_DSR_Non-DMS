@@ -177,8 +177,28 @@ document.addEventListener('DOMContentLoaded', function() {
             { "SKU ID": "PA 2X B2G1", "MRP": 450, "price": 388 },
             { "SKU ID": "PA 2X GM Intense 120ml", "MRP": 225, "price": 113 },
             { "SKU ID": "PA Alexander Single 120 ml", "MRP": 225, "price": 113 },
+        ],
+        "PA Shampoo": [
+            { "SKU ID": "PA Shampoo DF 180ml", "MRP": 170, "price": 133 },
+            { "SKU ID": "PA Shampoo SB 180ml", "MRP": 170, "price": 133 },
+        ],
+        "PA Shaving Cream": [
+            { "SKU ID": "PA Shaving Cream GM 84g", "MRP": 75, "price": 61 },
+            { "SKU ID": "PA Shaving Cream Classic 84g", "MRP": 75, "price": 61 },
+        ],
+         "PA ASL": [
+            { "SKU ID": "PA ASL CB 50ml", "MRP": 150, "price": 123 },
+            { "SKU ID": "PA ASL GM 50ml", "MRP": 150, "price": 123 },
+            { "SKU ID": "PA ASL GM 100ml", "MRP": 250, "price": 204 },
+            { "SKU ID": "PA ASL GM 50ml Spray", "MRP": 160, "price": 131 },
+            { "SKU ID": "PA ASL GM 45ml Travel Pack", "MRP": 99, "price": 81 }
+        ],
+        "PA Soap": [
+            { "SKU ID": "PA Soap New GM 125g", "MRP": 210, "price": 144 },
+            { "SKU ID": "PA Soap CB 125g", "MRP": 210, "price": 144 },
+            { "SKU ID": "PA Soap Luxury 125g", "MRP": 210, "price": 144 },
+            { "SKU ID": "PA Soap GM 125g", "MRP": 210, "price": 144 },
         ]
-        
         // Continue to add more categories and products
     };
 
