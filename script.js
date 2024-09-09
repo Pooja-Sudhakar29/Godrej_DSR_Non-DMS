@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded', function() {
             { "SKU ID": "KS Deo-Base Rush 220ml", "MRP": 370, "price": 165 }
         ],
 
-         "KS 4x Range": [
+         "PA 4x Range": [
             { "SKU ID": "PA 4X GM Ultimate 130ml", "MRP": 299, "price": 170 },
             { "SKU ID": "PA 4X Icon 130ml", "MRP": 299, "price": 170 },
             { "SKU ID": "PA 4X Regal 130ml", "MRP": 299, "price": 170 }
