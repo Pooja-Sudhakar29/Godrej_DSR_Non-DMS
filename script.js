@@ -225,7 +225,7 @@ document.addEventListener('DOMContentLoaded', function() {
         ],
         "NO ORDER": [
             { "SKU ID": "NO order", "MRP": 0, "price": 0.01 }
-        ],
+        ]
         // Continue to add more categories and products
     };
 
