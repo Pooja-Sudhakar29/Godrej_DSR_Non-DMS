@@ -202,8 +202,6 @@ document.addEventListener('DOMContentLoaded', function() {
             { "SKU ID": "KS Poc- Urge 18 ml", "MRP": 70, "price": 70 },
         ],
         
-        
-        
         "PA Shampoo": [
             { "SKU ID": "PA Shampoo DF 180ml", "MRP": 170, "price": 133 },
             { "SKU ID": "PA Shampoo SB 180ml", "MRP": 170, "price": 133 },
@@ -224,7 +222,7 @@ document.addEventListener('DOMContentLoaded', function() {
             { "SKU ID": "PA Soap CB 125g", "MRP": 210, "price": 144 },
             { "SKU ID": "PA Soap Luxury 125g", "MRP": 210, "price": 144 },
             { "SKU ID": "PA Soap GM 125g", "MRP": 210, "price": 144 },
-        ]
+        ],
         "NO ORDER": [
             { "SKU ID": "NO order", "MRP": 0, "price": 0.01 }
         ],
