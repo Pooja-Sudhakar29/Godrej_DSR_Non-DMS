@@ -293,26 +293,24 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Handle location button click
-    locationBtn.addEventListener('click', function() {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(showPosition, showError);
-        } else {
-            locationDisplay.textContent = "Geolocation is not supported by this browser.";
-        }
-    });
+    // locationBtn.addEventListener('click', function() {
+    //     if (navigator.geolocation) {
+    //         navigator.geolocation.getCurrentPosition(showPosition, showError);
+    //     } else {
+    //         locationDisplay.textContent = "Geolocation is not supported by this browser.";
+    //     }
+    // });
 
-    function showPosition(position) {
-        window.latitude = position.coords.latitude;
-        window.longitude = position.coords.longitude;
-        locationDisplay.textContent = "Latitude: " + position.coords.latitude +
-        " Longitude: " + position.coords.longitude;
-    }
+    // function showPosition(position) {
+    //     window.latitude = position.coords.latitude;
+    //     window.longitude = position.coords.longitude;
+    //     locationDisplay.textContent = "Latitude: " + position.coords.latitude +
+    //     " Longitude: " + position.coords.longitude;
+    // }
 
     function showError(error) {
         switch(error.code) {
             case error.PERMISSION_DENIED:
-                locationDisplay.textContent = "User denied the request for Geolocation.";
-                break;
             case error.POSITION_UNAVAILABLE:
                 locationDisplay.textContent = "Location information is unavailable.";
                 break;
