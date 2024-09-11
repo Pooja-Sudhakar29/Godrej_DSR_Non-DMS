@@ -22,10 +22,7 @@
             
             <label for="address">Store Address:</label>
             <input type="text" id="store-address" placeholder="Enter store address" required>
-            
-
-            <button id="location-btn">Get Current Location</button>
-            <div id="location-display"></div>
+        
 
             <label for="store-name">Phone number:</label>
             <input type="text" id="ph-no" placeholder="Enter phone number of owner" required>
@@ -116,9 +113,6 @@
                     }
                 });
                 totalValue.textContent = total.toFixed(2);
-
-                const latitude =  window.latitude;
-                const longitude = window.longitude;
             
                 
 
@@ -131,8 +125,6 @@
                 return {
                     area: areaName,
                     store_name: storeName,
-                    store_latitude: latitude,
-                    store_longitude: longitude,
                     store_phno: phNumber,
                     store_gst_text: gstNumber,
                     address: staddress,
@@ -165,7 +157,7 @@
                     document.getElementById('ph-no').value = '';
                     document.getElementById('store-address').value = '';
 
-                    document.getElementById('location-display').textContent = '';
+                    
                     document.querySelectorAll('.quantity-value').forEach(q => q.textContent = '0');
                     totalValue.textContent = 0;
                 }
