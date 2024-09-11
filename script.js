@@ -225,6 +225,9 @@ document.addEventListener('DOMContentLoaded', function() {
             { "SKU ID": "PA Soap Luxury 125g", "MRP": 210, "price": 144 },
             { "SKU ID": "PA Soap GM 125g", "MRP": 210, "price": 144 },
         ]
+        "NO ORDER": [
+            { "SKU ID": "NO order", "MRP": 0, "price": 0.01 }
+        ],
         // Continue to add more categories and products
     };
 
