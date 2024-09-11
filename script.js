@@ -179,11 +179,31 @@ document.addEventListener('DOMContentLoaded', function() {
             { "SKU ID": "PA EDP Harmony 100 ml", "MRP": 749, "price": 356 },
             { "SKU ID": "PA EDP-Gift Kit 4X20 ml", "MRP": 649, "price": 379 }
         ],
+        "PA 4x range": [
+            { "SKU ID": "PA 4X Amazon Woods 120ml", "MRP": 349, "price": 162 },
+            { "SKU ID": "PA 4X Corsica Cool 120ml", "MRP": 349, "price": 162 },
+            { "SKU ID": "PA 4X Savanna Fresh 120ml", "MRP": 349, "price": 162 },
+        ],
+        
         "PA 2x range": [
             { "SKU ID": "PA 2X B2G1", "MRP": 450, "price": 388 },
             { "SKU ID": "PA 2X GM Intense 120ml", "MRP": 225, "price": 113 },
             { "SKU ID": "PA Alexander Single 120 ml", "MRP": 225, "price": 113 },
         ],
+        "PA liquid mist": [
+            { "SKU ID": "PA Mist Trance 135ml", "MRP": 220, "price": 165 },
+            { "SKU ID": "KS Mist Spark 135ml", "MRP": 240, "price": 90 },
+            { "SKU ID": "KS Mist Urge 135ml", "MRP": 240, "price": 90 },
+        ],
+        "Pocket Perfume": [
+            { "SKU ID": "PA GM Pocket 18ml", "MRP": 70, "price": 70 },
+            { "SKU ID": "PA Voyage Pocket 18ml", "MRP": 70, "price": 70 },
+            { "SKU ID": "KS Spark Pocket 18ml", "MRP": 70, "price": 70 },
+            { "SKU ID": "KS Poc- Urge 18 ml", "MRP": 70, "price": 70 },
+        ],
+        
+        
+        
         "PA Shampoo": [
             { "SKU ID": "PA Shampoo DF 180ml", "MRP": 170, "price": 133 },
             { "SKU ID": "PA Shampoo SB 180ml", "MRP": 170, "price": 133 },
